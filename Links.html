@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Base body background */
+      body {
+        background-image: url('IMG_1808.jpg');
+        background-repeat: repeat-y;
+        background-attachment: fixed;
+        background-size: cover;
+        margin: 0;
+        text-align: center;
+        overflow-x: hidden;
+      }
+
+      /* Parallax overlay that loops vertically */
+      .parallax-layer {
+        position: fixed;
+        inset: 0;
+        background-image: url('IMG_1807.png'); /* replace with your seamless image */
+        background-repeat: repeat-y; /* this allows it to loop infinitely */
+        background-size: cover; /* adjust to 'auto' or '100% auto' if needed */
+        background-position: center 0;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      /* Main content */
+      .page-wrapper {
+        width: 80%;
+        margin: 0 auto;
+        line-height: 1;
+        position: relative;
+        z-index: 2; /* keep above the parallax layer */
+        text-align: center;
+        color: white;
+      }
+
+      header {
+        padding-top: 150px;
+      }
+
+      p {
+        font-family: sans-serif;
+      }
+
+      footer {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  font-family: sans-serif;
+  pointer-events: none; /* lets you click through it */
+  z-index: 3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Parallax layer -->
+    <div class="parallax-layer" id="parallax"></div>
+
+
+    <div class="page-wrapper">
+        <a href="file:///Users/teyaweir/Desktop/Website/home.html">
+            <img src="IMG_1803.png" alt="Teya Weir"
+            width="300"/> 
+            </a>
+        <br>
+        <a href="https://music.apple.com/us/artist/heiryss/1633780727">
+            <img src="Apple-Music-Logo.png" alt="Apple Music" style="width: 150px;height: 100px;">
+            </a>
+        <br>
+            <a href="https://heiryss.bandcamp.com/">
+                <img src="21495.png" alt="bandcamp" style="width: 100px;height: 100px;">
+                </a>
+        <br>
+        <a href="https://www.instagram.com/tree__ya/">
+            <img src="instagram-logo-instagram-icon-transparent-free-png.webp" alt="Instagram" style="width: 100px;height: 100px;">
+            </a>        
+      <p>spotify?</p>
+    </div>
+    <footer>
+        <p>© 2025 Teya Weir · All rights reserved.</p>
+        <br>
+        <p>The earth is like a big book. If you could speak all of it in one sitting, we'd run out of time to eat and sleep!! </p>
+      </footer>
+    <script>
+      const layer = document.getElementById('parallax');
+      const SPEED = 0.2; // Adjust for slower or faster motion
+
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY * SPEED;
+        // Moves the background while it repeats vertically
+        layer.style.backgroundPosition = `center ${-y}px`;
+      });
+    </script>
+  </body>
+</html>
